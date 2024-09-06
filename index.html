@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider and Carousel Example</title>
+
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ec7070; 
+            color: white; 
+        }
+
+        /* Centered heading styling */
+        .slider-heading {
+            text-align: center;
+            margin: 20px 0; 
+            font-size: 24px; 
+            color: white; 
+        }
+
+        .slick-slider, .owl-carousel {
+            width: 80%;
+            max-width: 800px; 
+            margin-bottom: 30px; /* Space between sliders */
+        }
+
+        .slick-slide img, .owl-carousel .item img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slick Slider  -->
+    <div class="slider-heading">Slick Slider </div>
+    <div class="slick-slider">
+        <div><img src="images/img1.png" alt="Slick Slide 1"></div>
+        <div><img src="images/img 2.jpeg" alt="Slick Slide 2"></div>
+        <div><img src="images/img 3.jpeg" alt="Slick Slide 3"></div>
+    </div>
+
+    <!-- Owl Carousel -->
+    <div class="slider-heading">Owl Carousel Slider </div>
+    <div class="owl-carousel">
+        <div class="item"><img src="images/img1.png" alt="Owl Slide 1"></div>
+        <div class="item"><img src="images/img 2.jpeg" alt="Owl Slide 2"></div>
+        <div class="item"><img src="images/img 3.jpeg" alt="Owl Slide 3"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick Slider JS -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            // Initialize Slick Slider
+            $('.slick-slider').slick({
+                infinite: true,  // Enables continuous scrolling
+                slidesToShow: 1, // Number of slides to show at once
+                slidesToScroll: 1, // Number of slides to scroll at a time
+                autoplay: true,  // Enables automatic sliding
+                autoplaySpeed: 2000, // Delay between slides
+                arrows: true,    // Show previous and next arrows
+                dots: true       // Show pagination dots
+            });
+
+            // Initialize Owl Carousel
+            $('.owl-carousel').owlCarousel({
+                loop: true,         // Enables continuous scrolling
+                margin: 10,         // Margin between items
+                nav: true,          // Show previous and next arrows
+                items: 1            // Number of items to show at once
+            });
+        });
+    </script>
+</body>
+</html>
